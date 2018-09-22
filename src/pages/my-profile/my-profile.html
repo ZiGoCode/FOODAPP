@@ -1,0 +1,108 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>myuser</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="list">
+    <ion-item class="item-center" no-lines>
+      <ion-avatar center>
+        <img src="../../assets/imgs/default-user-image.png">
+      </ion-avatar>
+      <p>This is an image</p>
+      <b>Name: {{ (profileData | async)?.username }}</b>
+    </ion-item>
+  </div>
+  <ion-item menuClose navPush="NotificationsPage">
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="ios-notifications"></ion-icon>
+        &nbsp;Notifications
+      </span>
+    </button>
+  </ion-item>
+  <ion-item menuClose navPush="MessagesPage" no-lines>
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="md-chatbubbles"></ion-icon>
+        &nbsp;Messages
+      </span>
+    </button>
+  </ion-item>
+
+  <div class="item-size"></div>
+
+  <ion-item menuClose navPush="SavedPage">
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="md-bookmark"></ion-icon>
+        &nbsp;Seved
+      </span>
+    </button>
+  </ion-item>
+
+  <ion-item menuClose navPush="LikeRestaurantPage">
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="md-thumbs-up"></ion-icon>
+        &nbsp;Like Restaurant
+      </span>
+    </button>
+  </ion-item>
+
+  <ion-item menuClose navPush="MyOrdersPage">
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="md-list-box"></ion-icon>
+        &nbsp;My Orders
+      </span>
+    </button>
+  </ion-item>
+
+  <ion-item menuClose navPush="RegisterRtrPage" no-lines>
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="clipboard"></ion-icon>
+        &nbsp;Register Restaurant
+      </span>
+    </button>
+  </ion-item>
+
+  <div class="item-size"></div>
+
+  <ion-item menuClose navPush="EditProfilePage">
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="ios-cog"></ion-icon>
+        &nbsp;Edit Profile
+      </span>
+    </button>
+  </ion-item>
+
+  <ion-item menuClose navPush="HelpPage" no-lines>
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="ios-help-circle"></ion-icon>
+        &nbsp;Help
+      </span>
+    </button>
+  </ion-item>
+
+  <ion-item menuClose color="light" no-lines (click)="logout()">
+    <button text-start no-padding class="text-12x">
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="ios-log-out"></ion-icon>
+        &nbsp;Login
+      </span>
+    </button>
+  </ion-item>
+
+  <br>
+  <br>
+
+</ion-content>

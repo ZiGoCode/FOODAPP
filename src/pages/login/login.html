@@ -1,0 +1,119 @@
+<ion-content no-padding no-marging text-center class="bg-style">
+  <br>
+  <br>
+  <div>
+    <img src="../../assets/imgs//iconT.png" class="subtitle">
+  </div>
+  <br>
+  <ion-card class="card-background-page">
+    <ion-card-header>
+      <ion-segment color="danger1" [(ngModel)]="pet">
+        <ion-segment-button value="login">
+          Login
+        </ion-segment-button>
+        <ion-segment-button value="Register">
+          Register
+        </ion-segment-button>
+      </ion-segment>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div [ngSwitch]="pet">
+        <ion-list *ngSwitchCase="'login'">
+
+          <ion-item>
+            <ion-label floating color="dark2">
+              <ion-icon color="orange1" name="mail"></ion-icon>
+              Email
+            </ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label floating color="dark2">
+              <ion-icon color="orange1" name="md-lock"></ion-icon>
+              Password
+            </ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <p align='right'><a (click)=showPrompt()>
+                <font size="1">Forgot Password?</font>
+              </a></p>
+          </ion-item>
+          <br>
+          <button ion-button icon-start full color="danger1" (click)=login(user) class="card-subtitle">
+            <ion-icon name="log-in"></ion-icon>
+            SING IN
+          </button>
+          <span ion-text color="light2">Or Sign Up with:</span>
+          <ion-row no-padding>
+            <ion-col no-padding>
+              <button ion-button icon-start full color="facebook">
+                <ion-icon name="logo-facebook"></ion-icon>
+                facebook
+              </button>
+            </ion-col>
+            &nbsp;
+            <ion-col no-padding>
+              <button ion-button icon-start full color="google">
+                <ion-icon name="logo-googleplus"></ion-icon>
+                google
+              </button>
+            </ion-col>
+          </ion-row>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'Register'">
+
+          <ion-item>
+            <ion-label floating color="dark2">
+              <ion-icon name="md-person"></ion-icon>
+              Username
+            </ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating color="dark2">
+              <ion-icon name="mail"></ion-icon>
+              Email
+            </ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating color="dark2">
+              <ion-icon name="md-lock"></ion-icon>
+              Password
+            </ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating color="dark2">
+              <ion-icon name="md-calendar"></ion-icon>
+              Enter Birth Day
+            </ion-label>
+            <ion-datetime type="date" name="dob" displayFormat="DD-MM-YYYY">
+            </ion-datetime>
+          </ion-item>
+          <ion-item>
+            <p align='right'>
+              <font size="1">FOODAPP.com</font>
+            </p>
+          </ion-item>
+
+          <br>
+          <button ion-button icon-start full color="danger1" (click)="register(user)">
+            <ion-icon name="person-add"></ion-icon>
+            SING UP
+          </button>
+        </ion-list>
+
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

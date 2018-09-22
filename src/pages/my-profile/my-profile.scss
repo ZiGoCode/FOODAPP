@@ -1,0 +1,24 @@
+page-myuser {
+
+}
+ion-avatar img  {
+    width:100% !important;
+    height : 100% !important;
+    max-width: 100px !important;  //any size
+    max-height: 100px !important; //any size
+    position: relative;
+    margin: auto;
+}
+.item-center{
+    text-align: center!important;
+}
+.text-12x{
+    font-size: 16px;
+}
+.item-size{
+    min-height: 1.3rem;
+    background-color: #dfdfdf;
+}
+.text-margin{
+    text-indent: 10px;
+}
