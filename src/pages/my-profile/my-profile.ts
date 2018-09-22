@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 /**
  * Generated class for the MyProfilePage page.
@@ -15,7 +18,16 @@ import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 })
 export class MyProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public appCtrl: App) {
+  profileData: Observable<any>;
+
+  constructor(private angularFireAuth: AngularFireAuth,
+    private angularFireDatabase: AngularFireDatabase,
+    public navCtrl: NavController, public navParams: NavParams,public appCtrl: App) {
+
+    this.angularFireAuth.authState.subscribe(data =>{
+      this.profileData = this.angularFireDatabase.object(`user/${data.uid}`).valueChanges();
+    })
+
   }
 
   ionViewDidLoad() {
@@ -23,7 +35,9 @@ export class MyProfilePage {
   }
 
   logout(){
+    
     this.appCtrl.getRootNav().setRoot('LoginPage');
+  
   }
 
 }

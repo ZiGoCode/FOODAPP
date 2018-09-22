@@ -16,3 +16,14 @@ ion-header{
         color: #ff6600;
     }
 }
+.toolbar-background {
+    background-color: #f4f4f4;
+  }
+
+@font-face {
+    font-family: 'RSU_Regular';
+    src: url('../assets/fonts/RSU_Regular.ttf') 
+}
+*{
+    font-family: RSU_Regular;
+}

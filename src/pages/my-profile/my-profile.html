@@ -1,22 +1,21 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>myuser</ion-title>
-  </ion-navbar>
-
 </ion-header>
 
 
 <ion-content>
-
+  <br>
+  <br>
   <div class="list">
     <ion-item class="item-center" no-lines>
       <ion-avatar center>
         <img src="../../assets/imgs/default-user-image.png">
       </ion-avatar>
       <p>This is an image</p>
-      <b>Name: {{ (profileData | async)?.username }}</b>
+      <b ion-text color="danger2">{{ (profileData | async)?.username }}</b>
     </ion-item>
+  
+
   </div>
   <ion-item menuClose navPush="NotificationsPage">
     <button text-start no-padding class="text-12x">

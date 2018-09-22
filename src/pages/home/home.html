@@ -1,14 +1,51 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only color="danger">
+        <ion-icon name="ionic"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar (ionInput)="getItems($event)" class="search-bar"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only color="danger">
+        <ion-icon name="ios-options"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-item-divider no-marging>
+    ร้านอาหารยอดนิยม
+  </ion-item-divider>
+  <ion-grid center>
+    <ion-row center class="row">
+      <ion-col no-maegin no-padding item-center>
+        <ion-item no-maegin no-padding text-center>
+          <img width="60" height="60" src="../../assets/imgs//restaurants/restaurant05sq.jpg">
+        </ion-item>
+      </ion-col>
+      <ion-col no-maegin no-padding>
+        <ion-item no-maegin no-padding>
+          <img width="60" height="60" src="../../assets/imgs//restaurants/restaurant03sq.jpg">
+        </ion-item>
+      </ion-col>
+      <ion-col no-maegin no-padding>
+        <ion-item no-maegin no-padding>
+          <img width="60" height="60" src="../../assets/imgs//restaurants/restaurant06sq.jpg">
+        </ion-item>
+      </ion-col>
+      <ion-col no-maegin no-padding>
+        <ion-item no-maegin no-padding>
+          <div class="img">
+              <img width="60" height="60" src="../../assets/imgs//restaurants/restaurant07sq.jpg">
+          </div>
+          
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item></ion-item>
+
 </ion-content>
