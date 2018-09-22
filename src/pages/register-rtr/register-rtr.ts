@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 /**
  * Generated class for the RegisterRtrPage page.
@@ -15,11 +16,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterRtrPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public onYourRestaurantForm: FormGroup;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private _fb: FormBuilder) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterRtrPage');
+  }
+
+  ngOnInit() {
+    this.onYourRestaurantForm = this._fb.group({
+      profiledata: [true, Validators.compose([
+        Validators.required
+      ])],
+      restaurantTitle: ['', Validators.compose([
+        Validators.required
+      ])],
+      restaurantAddress: ['', Validators.compose([
+        Validators.required
+      ])],
+      restaurantType: ['', Validators.compose([
+        Validators.required
+      ])]
+    });
   }
 
 }

@@ -14,93 +14,76 @@
       <p>This is an image</p>
       <b ion-text color="danger2">{{ (profileData | async)?.username }}</b>
     </ion-item>
-  
+
 
   </div>
+
   <ion-item menuClose navPush="NotificationsPage">
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="ios-notifications"></ion-icon>
-        &nbsp;Notifications
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="ios-notifications"></ion-icon>
+      <span class="text-12x">Notifications</span>
     </button>
   </ion-item>
+
   <ion-item menuClose navPush="MessagesPage" no-lines>
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="md-chatbubbles"></ion-icon>
-        &nbsp;Messages
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="md-chatbubbles"></ion-icon>
+      <span class="text-12x">Messages</span>
     </button>
   </ion-item>
 
   <div class="item-size"></div>
 
   <ion-item menuClose navPush="SavedPage">
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="md-bookmark"></ion-icon>
-        &nbsp;Seved
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="md-bookmark"></ion-icon>
+      <span class="text-12x">Seved</span>
     </button>
   </ion-item>
 
   <ion-item menuClose navPush="LikeRestaurantPage">
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="md-thumbs-up"></ion-icon>
-        &nbsp;Like Restaurant
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="md-thumbs-up"></ion-icon>
+      <span class="text-12x">Like Restaurant</span>
     </button>
   </ion-item>
 
   <ion-item menuClose navPush="MyOrdersPage">
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="md-list-box"></ion-icon>
-        &nbsp;My Orders
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="md-list-box"></ion-icon>
+      <span class="text-12x">My Orders</span>
     </button>
   </ion-item>
 
   <ion-item menuClose navPush="RegisterRtrPage" no-lines>
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="clipboard"></ion-icon>
-        &nbsp;Register Restaurant
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="clipboard"></ion-icon>
+      <span class="text-12x">Register Restaurant</span>
     </button>
   </ion-item>
 
   <div class="item-size"></div>
 
   <ion-item menuClose navPush="EditProfilePage">
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="ios-cog"></ion-icon>
-        &nbsp;Edit Profile
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="ios-cog"></ion-icon>
+      <span class="text-12x">Edit Profile</span>
     </button>
   </ion-item>
 
   <ion-item menuClose navPush="HelpPage" no-lines>
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="ios-help-circle"></ion-icon>
-        &nbsp;Help
-      </span>
+    <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+      <ion-icon class="text-12x" name="ios-help-circle"></ion-icon>
+      <span class="text-12x">Help</span>
     </button>
   </ion-item>
 
   <ion-item menuClose color="light" no-lines (click)="logout()">
-    <button text-start no-padding class="text-12x">
-      <span class="button-inner" ion-text color="dark1">
-        <ion-icon name="ios-log-out"></ion-icon>
-        &nbsp;Login
-      </span>
-    </button>
-  </ion-item>
-
+      <button ion-button icon-start clear no-padding no-margin color="dark1" class="text-12x">
+        <ion-icon class="text-12x" name="ios-log-out"></ion-icon>
+        <span class="text-12x">Login</span>
+      </button>
+    </ion-item>
   <br>
   <br>
 

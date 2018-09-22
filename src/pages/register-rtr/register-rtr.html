@@ -15,4 +15,91 @@
 
 <ion-content padding>
 
+    <form [formGroup]="onYourRestaurantForm" class="list-form">
+        <ion-list margin-bottom>
+          <ion-item color="danger" no-lines>+ Add Restaurant</ion-item>
+          <ion-item>
+            <ion-label color="danger1">Complement with my account/profile data:</ion-label>
+            <ion-checkbox formControlName="profiledata" color="danger1"></ion-checkbox>
+          </ion-item>
+          <p ion-text color="danger" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('profiledata').touched && onYourRestaurantForm.get('profiledata').hasError('required')">
+            This field is required
+          </p>
+
+          <ion-item>
+            <ion-label color="danger" stacked>Restaurant title:</ion-label>
+            <ion-input type="text" placeholder="ชื่อร้านอาหาร..." formControlName="restaurantTitle"></ion-input>
+          </ion-item>
+          <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantTitle').touched && onYourRestaurantForm.get('restaurantTitle').hasError('required')">
+            This field is required
+          </p>
+
+          <ion-item>
+            <ion-label color="danger" stacked>Restaurant Address:</ion-label>
+            <ion-input type="text" placeholder="ที่อยู่..." formControlName="restaurantAddress"></ion-input>
+          </ion-item>
+          <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantAddress').touched && onYourRestaurantForm.get('restaurantAddress').hasError('required')">This
+            field is required</p>
+
+          <ion-item>
+            <ion-label color="danger" stacked>Restaurant Type:</ion-label>
+            <ion-select placeholder="ประเภทร้านอาหาร..." formControlName="restaurantType">
+              <ion-option value="Pasta">Pasta</ion-option>
+              <ion-option value="Pizza">Pizza</ion-option>
+              <ion-option value="Fast Food">Fast Food</ion-option>
+              <ion-option value="Street Food">Street Food</ion-option>
+              <ion-option value="Barbecue">Barbecue</ion-option>
+              <ion-option value="Oriental">Oriental</ion-option>
+              <ion-option value="Local Food">Local Food</ion-option>
+              <ion-option value="Variable">Variable</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <div padding-vertical>
+          <h5 ion-text color="danger1" margin-bottom class="fw500">Add Images of Restaurant <span ion-text class="fw300">
+            (Max.5)</span></h5>
+          <button ion-button icon-only color="light">
+            <ion-icon name="image" color="dark"></ion-icon>
+          </button>
+          <button ion-button icon-only color="light">
+            <ion-icon name="image" color="dark"></ion-icon>
+          </button>
+          <button ion-button icon-only color="light">
+            <ion-icon name="image" color="dark"></ion-icon>
+          </button>
+          <button ion-button icon-only color="light">
+            <ion-icon name="image" color="dark"></ion-icon>
+          </button>
+          <button ion-button icon-only color="light">
+            <ion-icon name="image" color="dark"></ion-icon>
+          </button>
+        </div>
+
+        <button ion-button block color="danger1" (click)="addRestaurant(restaurant)" [disabled]="!onYourRestaurantForm.valid">
+          <ion-icon name="cloud-upload"></ion-icon>
+          &nbsp;
+          + Restaurant
+        </button>
+        <br>
+        <!-- <button ion-item detail-none no-margin  navPush="EditrestaurantPage">
+          <ion-thumbnail item-start>
+            <img src="../../assets/imgs/F.png">
+          </ion-thumbnail>
+          <div text-capitalize>
+            <h2 ion-text color="dark" class="fw500">{{ (restaurantUid | async)?.title }}</h2>
+            <p class="text-12x" ion-text color="star">{{ (restaurantUid | async)?.type }}</p>
+            <p ion-text class="text-12"><span>1 km : 30-60min</span></p>
+          </div>
+
+          <button ion-button clear icon-left text-start item-right color="dark">
+            <span class="button-inner">
+              <ion-icon name="md-clipboard"></ion-icon>
+              Dish
+            </span>
+          </button>
+        </button> -->
+      </form>
+      <ion-item color="danger" no-lines>Restaurant Add Dish</ion-item>
+
 </ion-content>
