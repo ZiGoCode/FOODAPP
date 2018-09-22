@@ -9,16 +9,22 @@ ion-avatar img  {
     position: relative;
     margin: auto;
 }
-.item-center{
+.item-center{ 
     text-align: center!important;
 }
 .text-12x{
-    font-size: 16px;
+    font-size:20px;
 }
+.text-14x{
+    font-size: 18px;
+}   
 .item-size{
     min-height: 1.3rem;
     background-color: #dfdfdf;
 }
 .text-margin{
     text-indent: 10px;
+}
+.button-inner{
+    font-size: 18px;
 }

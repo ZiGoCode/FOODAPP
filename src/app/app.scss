@@ -9,11 +9,13 @@
 
 ion-navbar{
     text-align: center;
+    background-color: #ff6600;
+    color: #ff6600;
 }
 ion-header{
     .back-button-md,
     .back-button-ios {
-        color: #ff6600;
+        color: #ffffff;
     }
 }
 .toolbar-background {
