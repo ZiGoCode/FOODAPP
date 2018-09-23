@@ -1,13 +1,13 @@
 .tabbar a[aria-selected=true] {
     border-top: 1px;
     border-style: solid;   
-    color: #ff6600 !important;
+    color: #ff4500 !important;
 }
 .tab-button[aria-selected=true] .tab-button-icon {
-    color: #ff6600 !important;
+    color: #ff4500 !important;
 }
 
-ion-navbar{
+ion-navbar{ 
     text-align: center;
     background-color: #ff6600;
     color: #ff6600;
