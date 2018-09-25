@@ -1,18 +1,85 @@
-<!--
-  Generated template for the RegisterDishPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar color="danger2"> 
-    <ion-title>registerDish</ion-title>
+  <ion-navbar hideBackButton color="danger2">
+    <ion-buttons left>
+      <button ion-button icon-only text-start navPop>
+        <ion-icon name="arrow-back" color=""><span class="text-16x">Back</span></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Register Dish</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-item color="danger" no-lines>+ Add Dishes</ion-item>
+  <div padding-vertical>
+    <ion-item>
+      <ion-label color="danger1" stacked>Add menu to the restaurant:</ion-label>
+      <ion-select [(ngModel)]="dish.id" placeholder="เพิ่มเมนูไปยังร้าน...">
+        <div *ngFor="let item of items | async">
+          <ion-option value="{{item?.key}}">{{item.title}}</ion-option>
+
+        </div>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="danger1" stacked>Dish Name:</ion-label>
+      <ion-input [(ngModel)]="dish.title" type="text" placeholder="ชื่อเมนูอาหาร..."></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="danger1" stacked>Dish Type:</ion-label>
+      <ion-select [(ngModel)]="dish.type" placeholder="ประเภทเมนูอาหาร...">
+        <ion-option value="house">Pasta</ion-option>
+        <ion-option value="mansion">Pizza</ion-option>
+        <ion-option value="Apartment">Fast Food</ion-option>
+        <ion-option value="comroom">Street Food</ion-option>
+        <ion-option value="farm">Barbecue</ion-option>
+        <ion-option value="farm">Veggie</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="danger1" stacked>Dish Ingredients:</ion-label>
+      <ion-textarea [(ngModel)]="dish.ingredients" rows="5" placeholder="ส่วนประสมของหาอาร..."></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="danger1" stacked>Dish Price:</ion-label>
+      <ion-input [(ngModel)]="dish.price" type="number" placeholder="ราคา..."></ion-input>
+    </ion-item>
+
+    <div padding-vertical>
+      <h5 ion-text color="danger1" margin-bottom class="fw500">Add Images of Dish <span ion-text class="fw300">(Max.
+          5)</span></h5>
+      <button ion-button icon-only color="light">
+        <ion-icon name="image" color="dark1"></ion-icon>
+      </button>
+      <button ion-button icon-only color="light">
+        <ion-icon name="image" color="dark1"></ion-icon>
+      </button>
+      <button ion-button icon-only color="light">
+        <ion-icon name="image" color="dark1"></ion-icon>
+      </button>
+      <button ion-button icon-only color="light">
+        <ion-icon name="image" color="dark1"></ion-icon>
+      </button>
+      <button ion-button icon-only color="light">
+        <ion-icon name="image" color="dark1"></ion-icon>
+      </button>
+    </div>
+
+    <button ion-button block color="danger" (click)="registerDish(dish)">
+      <ion-icon name="cloud-upload"></ion-icon>
+      &nbsp;
+      + Dishes
+    </button>
+    <br>
+    <ion-item color="danger">Dishes</ion-item>
+  </div>
 
 </ion-content>

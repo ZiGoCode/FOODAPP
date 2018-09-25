@@ -1,12 +1,7 @@
 <ion-header>
 
-  <ion-navbar hideBackButton color="danger2">
-    <ion-buttons left navPop>
-      <button ion-button icon-only text-start>
-        <ion-icon name="arrow-back" color=""><span class="text-16x">Back</span></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-title>Register Restaurant</ion-title>
+  <ion-navbar color="danger2">
+    <ion-title>{{restaurant.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,7 +11,7 @@
 
   <form [formGroup]="onYourRestaurantForm" class="list-form">
     <ion-list margin-bottom>
-      <ion-item color="danger" no-lines>+ Add Restaurant</ion-item>
+      <ion-item color="danger" no-lines>Edit Restaurant</ion-item>
       <ion-item>
         <ion-label color="danger1">Complement with my account/profile data:</ion-label>
         <ion-checkbox formControlName="profiledata" color="danger1"></ion-checkbox>
@@ -37,8 +32,8 @@
         <ion-label color="danger" stacked>Restaurant Address:</ion-label>
         <ion-input [(ngModel)]="restaurant.address" type="text" placeholder="ที่อยู่..." formControlName="restaurantAddress"></ion-input>
       </ion-item>
-      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantAddress').touched && onYourRestaurantForm.get('restaurantAddress').hasError('required')">This
-        field is required</p>
+      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantAddress').touched && onYourRestaurantForm.get('restaurantAddress').hasError('required')">
+        This field is required</p>
 
       <ion-item>
         <ion-label color="danger" stacked>Restaurant Type:</ion-label>
@@ -53,6 +48,7 @@
           <ion-option value="Variable">Variable</ion-option>
         </ion-select>
       </ion-item>
+
     </ion-list>
 
     <div padding-vertical>
@@ -75,55 +71,12 @@
       </button>
     </div>
 
-    <button ion-button block color="danger1" (click)="addRestaurant(restaurant)" [disabled]="!onYourRestaurantForm.valid">
-      <ion-icon name="cloud-upload"></ion-icon>
+    <button ion-button block color="danger1" (click)="editRestaurant(restaurant)" [disabled]="!onYourRestaurantForm.valid">
+      <ion-icon name="ios-create"></ion-icon>
       &nbsp;
-      + Restaurant
+      Edit Restaurant
     </button>
     <br>
-    <!-- <button ion-item detail-none no-margin  navPush="EditrestaurantPage">
-          <ion-thumbnail item-start>
-            <img src="../../assets/imgs/F.png">
-          </ion-thumbnail>
-          <div text-capitalize>
-            <h2 ion-text color="dark" class="fw500">{{ (restaurantUid | async)?.title }}</h2>
-            <p class="text-12x" ion-text color="star">{{ (restaurantUid | async)?.type }}</p>
-            <p ion-text class="text-12"><span>1 km : 30-60min</span></p>
-          </div>
-
-          <button ion-button clear icon-left text-start item-right color="dark">
-            <span class="button-inner">
-              <ion-icon name="md-clipboard"></ion-icon>
-              Dish
-            </span>
-          </button>
-        </button> -->
   </form>
-  <ion-item color="danger" no-lines>Restaurant Add Dish</ion-item>
-
-  <ion-list>
-
-    <ion-item-sliding *ngFor="let item of items | async" (click)="editR(item)">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="../../assets/imgs/restaurants/restaurant05sq.jpg">
-        </ion-thumbnail>
-        <h3 ion-text color="danger4" class="fw700">{{ item.title }}</h3>
-        <p ion-text color="danger3" class="fw500">{{ item.type }}</p>
-        <p ion-text class="text-12x">{{ item.address }}</p>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button (click)="editR(item)" class="bts-w">
-          <ion-icon name="create"></ion-icon>
-          Edit
-        </button>
-        <button ion-button color="danger1" (click)="deleteR(item)" class="bts-w">
-          <ion-icon name="md-trash"></ion-icon>
-          Delete
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-
 
 </ion-content>

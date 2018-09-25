@@ -1,10 +1,10 @@
 <ion-header>
-
+  <ion-navbar color="danger2">
+    <ion-title>Me</ion-title>
+  </ion-navbar>
 </ion-header>
 
-
 <ion-content>
-  <br>
   <br>
   <div class="list">
     <ion-item class="item-center" no-lines>
@@ -14,18 +14,16 @@
       <p>This is an image</p>
       <h1><b>{{ (profileData | async)?.username }}</b></h1>
     </ion-item>
-
-
   </div>
 
   <ion-item menuClose navPush="NotificationsPage" no-margin>
-      <button text-start no-padding>
-        <span class="button-inner" ion-text color="dark1">
-          <ion-icon name="ios-notifications"></ion-icon>
-          &nbsp;Notifications
-        </span>
-      </button>
-    </ion-item>
+    <button text-start no-padding>
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="ios-notifications"></ion-icon>
+        &nbsp;Notifications
+      </span>
+    </button>
+  </ion-item>
 
   <ion-item menuClose navPush="MessagesPage" no-lines no-margin>
     <button text-start no-padding>
@@ -37,6 +35,15 @@
   </ion-item>
 
   <div class="item-size"></div>
+
+  <ion-item menuClose navPush="SavedPage" no-margin>
+    <button text-start no-padding>
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="md-cart"></ion-icon>
+        &nbsp;Cart
+      </span>
+    </button>
+  </ion-item>
 
   <ion-item menuClose navPush="SavedPage" no-margin>
     <button text-start no-padding>
@@ -65,11 +72,20 @@
     </button>
   </ion-item>
 
-  <ion-item menuClose navPush="RegisterRtrPage" no-lines no-margin>
+  <ion-item menuClose navPush="RegisterRtrPage" no-margin>
+    <button text-start no-padding>
+      <span class="button-inner" ion-text color="dark1">
+        <ion-icon name="md-document"></ion-icon>
+        &nbsp;Register Restaurant
+      </span>
+    </button>
+  </ion-item>
+
+  <ion-item menuClose navPush="RegisterDishPage" no-lines no-margin>
     <button text-start no-padding>
       <span class="button-inner" ion-text color="dark1">
         <ion-icon name="ios-clipboard"></ion-icon>
-        &nbsp;Register Restaurant
+        &nbsp;Register Dish
       </span>
     </button>
   </ion-item>
