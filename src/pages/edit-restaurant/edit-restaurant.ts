@@ -6,7 +6,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Restaurant } from '../../firebase/restaurant';
-import { Dish } from '../../firebase/dish';
+
+
 
 @IonicPage()
 @Component({
@@ -70,7 +71,7 @@ export class EditRestaurantPage {
 
 
 
-  editRestaurant(restaurant: Restaurant) {
+  editRestaurant(restaurant) {
     const itemIDR = this.navParams.get('item')
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
@@ -78,7 +79,9 @@ export class EditRestaurantPage {
     });
     loader.present();
     this.angularFireAuth.authState.take(1).subscribe(data => {
-      // this.angularFireDatabase.list(`restaurantID/${data.uid}/${itemIDR.key}`).update(restaurant);
+      this.angularFireDatabase.list(`restaurantID/${data.uid}`).update(restaurant.key, restaurant).then(()=>{
+        this.navCtrl.pop();
+      });
     });
     loader.dismiss();
   }
