@@ -18,7 +18,6 @@ export class EditRestaurantPage {
 
   public onYourRestaurantForm: FormGroup;
   restaurant = {} as Restaurant;
-  restaurantEdit: any;
 
   constructor(private angularFireAuth: AngularFireAuth,
     private angularFireDatabase: AngularFireDatabase,
@@ -30,11 +29,6 @@ export class EditRestaurantPage {
 
     this.restaurant = this.navParams.get('item');
     
-    const itemIDR = this.navParams.get('item')
-    
-    this.angularFireAuth.authState.take(1).subscribe(data => {
-      this.restaurantEdit = this.angularFireDatabase.list(`restaurantID/${data.uid}/${itemIDR.key}`)
-    });
 
     // this.angularFireAuth.authState.take(1).subscribe(data => {
     //   // this.items = this.angularFireDatabase.list(`restaurantID/${data.uid}`).valueChanges();
@@ -70,9 +64,7 @@ export class EditRestaurantPage {
   }
 
 
-
   editRestaurant(restaurant) {
-    const itemIDR = this.navParams.get('item')
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
       spinner: 'crescent',

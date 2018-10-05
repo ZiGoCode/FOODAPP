@@ -4,13 +4,7 @@ import { User } from '../../firebase/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { take } from 'rxjs/operators';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -19,6 +13,8 @@ import { take } from 'rxjs/operators';
 })
 export class LoginPage {
   pet: string = "login";
+  public onLoginForm: FormGroup;
+  public onRegisterForm: FormGroup;
 
   user = {} as User;
 
@@ -27,8 +23,34 @@ export class LoginPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public loadingCtrl: LoadingController,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,
+    private _fb: FormBuilder) {
 
+  }
+
+  ngOnInit() {
+    this.onLoginForm = this._fb.group({
+      email: ['', Validators.compose([
+        Validators.required
+      ])],
+      password: ['', Validators.compose([
+        Validators.required
+      ])]
+    });
+    this.onRegisterForm = this._fb.group({
+      fullName: ['', Validators.compose([
+        Validators.required
+      ])],
+      email: ['', Validators.compose([
+        Validators.required
+      ])],
+      password: ['', Validators.compose([
+        Validators.required
+      ])],
+      birthdate: ['', Validators.compose([
+        Validators.required
+      ])]
+    });
   }
 
   ionViewDidLoad() {

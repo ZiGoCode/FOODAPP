@@ -9,7 +9,7 @@ page-home {
 }
 .row{
     align-items: center;
-    text-overflow: ellipsis;
+    text-overflow: "..";
     text-align: center;
     color: #96071a;
 }
@@ -32,4 +32,8 @@ page-home {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; 
+ }
+ .danger4{
+    text-align: center;
+
  }

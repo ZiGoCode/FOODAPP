@@ -60,18 +60,10 @@ export class RegisterRtrPage {
 
   ngOnInit() {
     this.onYourRestaurantForm = this._fb.group({
-      profiledata: [true, Validators.compose([
-        Validators.required
-      ])],
-      restaurantTitle: ['', Validators.compose([
-        Validators.required
-      ])],
-      restaurantAddress: ['', Validators.compose([
-        Validators.required
-      ])],
-      restaurantType: ['', Validators.compose([
-        Validators.required
-      ])]
+      profiledata: [true, Validators.compose([Validators.required])],
+      restaurantTitle: ['', Validators.compose([Validators.required])],
+      restaurantAddress: ['', Validators.compose([Validators.required])],
+      restaurantType: ['', Validators.compose([Validators.required])]
     });
   }
 
@@ -84,10 +76,14 @@ export class RegisterRtrPage {
     // this.angularFireDatabase.list("/restaurant/").push(restaurant);
     this.angularFireAuth.authState.take(1).subscribe(data => {
       this.angularFireDatabase.list(`restaurantID/${data.uid}`).push(restaurant).then(() => {
-        this.navCtrl.setRoot(RegisterRtrPage);
+        this.navCtrl.pop();
       });
     });
     loader.dismiss();
+  }
+
+  btedit(item) {
+    this.navCtrl.push('EditRestaurantPage', { item: item })
   }
 
   editR(item) {
@@ -96,11 +92,17 @@ export class RegisterRtrPage {
       title: 'Modify your Restaurant',
       buttons: [
         {
+          text: 'Up the Restaurant to FOODAPP',
+          handler: () => {
+            console.log('...');
+          }
+        }, {
           text: 'Edit',
           handler: () => {
             this.navCtrl.push('EditRestaurantPage', { item: item })
           }
-        }, {
+        },
+        {
           text: 'Delete',
           role: 'destructive',
           handler: () => {
@@ -123,11 +125,10 @@ export class RegisterRtrPage {
 
   // this.navCtrl.push('EditRestaurantPage', {rtrID: item.key})
 
-  // deleteR(item) {
-  //   console.log(item.key)
-  //   this.angularFireAuth.authState.take(1).subscribe(data => {
-  //     this.angularFireDatabase.list(`restaurantID/${data.uid}`).remove(item.key);
-  //     // this.angularFireDatabase.list(`restaurant/`).remove(item.key);
-  //   })
-  // }
+  deleteR(item) {
+    this.angularFireAuth.authState.take(1).subscribe(data => {
+      this.angularFireDatabase.list(`restaurantID/${data.uid}`).remove(item.key);
+      // this.angularFireDatabase.list(`restaurant/`).remove(item.key);
+    })
+  }
 }

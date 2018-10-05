@@ -4,13 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { Dish } from '../../firebase/dish';
-
-/**
- * Generated class for the RegisterDishPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -21,13 +15,16 @@ export class RegisterDishPage {
 
   items: Observable<any[]>;
   dish = {} as Dish;
+  public registerdish: FormGroup;
 
 
 
   constructor(private angularFireAuth: AngularFireAuth,
     private angularFireDatabase: AngularFireDatabase,
     public loadingCtrl: LoadingController,
-    public navCtrl: NavController, public navParams: NavParams) {
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private _fb: FormBuilder) {
 
     this.angularFireAuth.authState.take(1).subscribe(data => {
       // this.items = this.angularFireDatabase.list(`restaurantID/${data.uid}`).valueChanges();
@@ -37,19 +34,39 @@ export class RegisterDishPage {
         }));
       });
     });
-  
+
   }
 
-  registerDish(dish: Dish,) {
-    
+  ngOnInit() {
+    this.registerdish = this._fb.group({
+      dishid: ['', Validators.compose([
+        Validators.required
+      ])],
+      dishname: ['', Validators.compose([
+        Validators.required
+      ])],
+      dishtype: ['', Validators.compose([
+        Validators.required
+      ])],
+      dishingredients: ['', Validators.compose([
+        Validators.required
+      ])],
+      dishprice: ['', Validators.compose([
+        Validators.required
+      ])]
+    });
+  }
+
+  registerDish(dish: Dish, ) {
+
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
       spinner: 'crescent',
     });
     loader.present();
     this.angularFireAuth.authState.take(1).subscribe(data => {
-      this.angularFireDatabase.list(`restaurantID/${data.uid}/${dish.id}`).push(dish).then(()=>{
-        this.navCtrl.setRoot(RegisterDishPage);
+      this.angularFireDatabase.list(`restaurantID/${data.uid}/${dish.id}`).push(dish).then(() => {
+        this.navCtrl.pop();
       });
     });
     loader.dismiss();
@@ -57,7 +74,8 @@ export class RegisterDishPage {
 
 
   ionViewDidLoad() {
-    
+
   }
+
 
 }

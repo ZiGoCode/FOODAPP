@@ -23,9 +23,27 @@ ion-avatar img  {
     background-color: #dfdfdf;
 }
 .text-margin{
-    text-indent: 10px;
-}  
+    text-indent: 10px; 
+}   
 .button-inner{
-    font-size: 18px; 
-} 
+    font-size: 18px;     
+}      
+.icon-20x{ 
+    font-size: 30px;    
+    position: absolute;
+    left: 5%;
+    top: 20%; 
+    color: #FF6C00;
+}      
+.text-left{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    text-align: left!important;
+    font-size: 18px;
+    
+}
+.item-zex{  
+    height: 55px; 
+}
  

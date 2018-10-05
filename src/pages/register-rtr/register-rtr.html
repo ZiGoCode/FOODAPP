@@ -1,22 +1,22 @@
 <ion-header>
 
-  <ion-navbar hideBackButton color="danger2">
-    <ion-buttons left navPop>
-      <button ion-button icon-only text-start>
-        <ion-icon name="arrow-back" color=""><span class="text-16x"></span></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-title>&nbsp;&nbsp;&nbsp;&nbsp;Register Restaurant</ion-title>
+  <ion-navbar color="danger2">
+    <ion-title>Register Restaurant</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card color="danger5" no-padding no-margin class="card-bg12">
+    <ion-card-content>
+      <span class="card-bg13">กรอกแบบฟอร์ม พร้อมกับข้อมูลร้านอาหารของคุณ เพื่อลงทะเบียน</span>
+    </ion-card-content>
+  </ion-card>
+  <br>
   <form [formGroup]="onYourRestaurantForm" class="list-form">
     <ion-list margin-bottom>
-      <ion-item color="danger" no-lines>+ Add Restaurant</ion-item>
+      <ion-item color="light" no-lines>+ Add Restaurant</ion-item>
       <ion-item>
         <ion-label color="danger1">Complement with my account/profile data:</ion-label>
         <ion-checkbox formControlName="profiledata" color="danger1"></ion-checkbox>
@@ -37,8 +37,9 @@
         <ion-label color="danger" stacked>Restaurant Address:</ion-label>
         <ion-input [(ngModel)]="restaurant.address" type="text" placeholder="ที่อยู่..." formControlName="restaurantAddress"></ion-input>
       </ion-item>
-      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantAddress').touched && onYourRestaurantForm.get('restaurantAddress').hasError('required')">This
-        field is required</p>
+      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantAddress').touched && onYourRestaurantForm.get('restaurantAddress').hasError('required')">
+        This field is required
+      </p>
 
       <ion-item>
         <ion-label color="danger" stacked>Restaurant Type:</ion-label>
@@ -99,21 +100,25 @@
           </button>
         </button> -->
   </form>
-  <ion-item color="danger" no-lines>Restaurant Add Dish</ion-item>
+  <ion-item color="light" no-lines>Edit Restaurant</ion-item>
 
   <ion-list>
 
-    <ion-item-sliding *ngFor="let item of items | async" (click)="editR(item)">
-      <ion-item>
+    <ion-item-sliding *ngFor="let item of items | async">
+      <ion-item (click)="editR(item)">
         <ion-thumbnail item-start>
-          <img src="../../assets/imgs/restaurants/restaurant05sq.jpg">
+          <img src="../../assets/imgs/icon.png">
         </ion-thumbnail>
         <h3 ion-text color="danger4" class="fw700">{{ item.title }}</h3>
         <p ion-text color="danger3" class="fw500">{{ item.type }}</p>
         <p ion-text class="text-12x">{{ item.address }}</p>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button (click)="editR(item)" class="bts-w">
+        <button ion-button (click)="btedit(item)" class="bts-w" color="secondary1">
+          <ion-icon name="ios-checkbox"></ion-icon>
+          UP
+        </button>
+        <button ion-button (click)="btedit(item)" class="bts-w">
           <ion-icon name="create"></ion-icon>
           Edit
         </button>
