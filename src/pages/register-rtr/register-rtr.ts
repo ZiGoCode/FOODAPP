@@ -63,7 +63,12 @@ export class RegisterRtrPage {
       profiledata: [true, Validators.compose([Validators.required])],
       restaurantTitle: ['', Validators.compose([Validators.required])],
       restaurantAddress: ['', Validators.compose([Validators.required])],
-      restaurantType: ['', Validators.compose([Validators.required])]
+      restaurantType: ['', Validators.compose([Validators.required])],
+      restaurantRoad: ['', Validators.compose([Validators.required])],
+      restaurantSub: ['', Validators.compose([Validators.required])],
+      restaurantDistrict: ['', Validators.compose([Validators.required])],
+      restaurantProvince: ['', Validators.compose([Validators.required])],
+      restaurantPostal: ['', Validators.compose([Validators.required])]
     });
   }
 
@@ -75,6 +80,7 @@ export class RegisterRtrPage {
     loader.present();
     // this.angularFireDatabase.list("/restaurant/").push(restaurant);
     this.angularFireAuth.authState.take(1).subscribe(data => {
+      this.angularFireDatabase.list("/restaurant/").push(restaurant);
       this.angularFireDatabase.list(`restaurantID/${data.uid}`).push(restaurant).then(() => {
         this.navCtrl.pop();
       });
@@ -107,6 +113,7 @@ export class RegisterRtrPage {
           role: 'destructive',
           handler: () => {
             this.angularFireAuth.authState.take(1).subscribe(data => {
+              this.angularFireDatabase.list(`restaurant/`).remove(item.key);
               this.angularFireDatabase.list(`restaurantID/${data.uid}`).remove(item.key);
               // this.angularFireDatabase.list(`restaurant/`).remove(item.key);
             })
@@ -127,6 +134,7 @@ export class RegisterRtrPage {
 
   deleteR(item) {
     this.angularFireAuth.authState.take(1).subscribe(data => {
+      this.angularFireDatabase.list(`restaurant/`).remove(item.key);
       this.angularFireDatabase.list(`restaurantID/${data.uid}`).remove(item.key);
       // this.angularFireDatabase.list(`restaurant/`).remove(item.key);
     })

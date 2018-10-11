@@ -24,7 +24,7 @@ export class RestaurantPage {
     private angularFireDatabase: AngularFireDatabase,
     public navCtrl: NavController, public navParams: NavParams) {
 
-    this.items = this.angularFireDatabase.list(`restaurantID`).valueChanges();
+    this.items = this.angularFireDatabase.list(`restaurant`).valueChanges();
     
   }
 

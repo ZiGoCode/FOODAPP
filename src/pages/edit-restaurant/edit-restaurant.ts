@@ -59,7 +59,12 @@ export class EditRestaurantPage {
       ])],
       restaurantType: ['', Validators.compose([
         Validators.required
-      ])]
+      ])],
+      restaurantRoad: ['', Validators.compose([Validators.required])],
+      restaurantSub: ['', Validators.compose([Validators.required])],
+      restaurantDistrict: ['', Validators.compose([Validators.required])],
+      restaurantProvince: ['', Validators.compose([Validators.required])],
+      restaurantPostal: ['', Validators.compose([Validators.required])]
     });
   }
 
@@ -71,6 +76,7 @@ export class EditRestaurantPage {
     });
     loader.present();
     this.angularFireAuth.authState.take(1).subscribe(data => {
+      this.angularFireDatabase.list(`restaurant/`).update(restaurant.key, restaurant);
       this.angularFireDatabase.list(`restaurantID/${data.uid}`).update(restaurant.key, restaurant).then(()=>{
         this.navCtrl.pop();
       });

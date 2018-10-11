@@ -34,12 +34,50 @@
       </p>
 
       <ion-item>
-        <ion-label color="danger" stacked>Restaurant Address:</ion-label>
-        <ion-input [(ngModel)]="restaurant.address" type="text" placeholder="ที่อยู่..." formControlName="restaurantAddress"></ion-input>
+        <ion-label color="danger" stacked>Address:</ion-label>
+        <ion-input [(ngModel)]="restaurant.address" type="text" placeholder="เลขที่ / หมู่ที่" formControlName="restaurantAddress"></ion-input>
       </ion-item>
       <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantAddress').touched && onYourRestaurantForm.get('restaurantAddress').hasError('required')">
         This field is required
       </p>
+
+      <ion-item>
+        <ion-label color="danger" stacked>Road:</ion-label>
+        <ion-input [(ngModel)]="restaurant.road" type="text" placeholder="ถนน" formControlName="restaurantRoad"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="danger" stacked>Sub-district/ Sub-area:</ion-label>
+        <ion-input [(ngModel)]="restaurant.sub" type="text" placeholder="ตำบล / แขวง" formControlName="restaurantSub"></ion-input>
+      </ion-item>
+      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantSub').touched && onYourRestaurantForm.get('restaurantSub').hasError('required')">
+        This field is required
+      </p>
+
+      <ion-item>
+        <ion-label color="danger" stacked>District / Area:</ion-label>
+        <ion-input [(ngModel)]="restaurant.district" type="text" placeholder="อำเภอ / เขต" formControlName="restaurantDistrict"></ion-input>
+      </ion-item>
+      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantDistrict').touched && onYourRestaurantForm.get('restaurantDistrict').hasError('required')">
+        This field is required
+      </p>
+
+      <ion-item>
+        <ion-label color="danger" stacked>Province:</ion-label>
+        <ion-input [(ngModel)]="restaurant.province" type="text" placeholder="จังหวัด" formControlName="restaurantProvince"></ion-input>
+      </ion-item>
+      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantProvince').touched && onYourRestaurantForm.get('restaurantProvince').hasError('required')">
+        This field is required
+      </p>
+
+      <ion-item>
+        <ion-label color="danger" stacked>Postal Code:</ion-label>
+        <ion-input [(ngModel)]="restaurant.postalcode" type="number" placeholder="รหัสไปรษณีย์" formControlName="restaurantPostal"></ion-input>
+      </ion-item>
+      <p ion-text color="danger1" class="text-1x has-error" *ngIf="onYourRestaurantForm.get('restaurantPostal').touched && onYourRestaurantForm.get('restaurantPostal').hasError('required')">
+        This field is required
+      </p>
+
 
       <ion-item>
         <ion-label color="danger" stacked>Restaurant Type:</ion-label>

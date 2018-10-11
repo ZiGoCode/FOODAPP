@@ -97,7 +97,7 @@ export class LoginPage {
           this.angularFireDatabase.object(`user/${data.uid}`).set(this.user);
         });
         this.navCtrl.setRoot('TabsPage');
-        loader.dismiss();
+        loader.dismiss(); 
       }
     }catch(e){
       const alert = this.alertCtrl.create({
