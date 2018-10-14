@@ -1,0 +1,7 @@
+<ion-tabs #myTabs class="tabs-bg">
+  <ion-tab tabIcon="md-list-box" tabTitle="New" [root]="tab1"></ion-tab>
+  <ion-tab tabIcon="ios-folder-open" tabTitle="Open" [root]="tab2"></ion-tab>
+  <ion-tab tabIcon="md-copy" tabTitle="Orders" [root]="tab3"></ion-tab>
+  <ion-tab tabIcon="ios-stats" tabTitle="Stats" [root]="tab4"></ion-tab>
+  <ion-tab tabIcon="ios-log-out" tabTitle="Out" (ionSelect)="rootpage()"></ion-tab>
+</ion-tabs> 

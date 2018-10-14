@@ -1,3 +1,4 @@
+
 .tabbar a[aria-selected=true] {
     border-top: 1px;
     border-style: solid;   
@@ -5,6 +6,15 @@
 }
 .tab-button[aria-selected=true] .tab-button-icon {
     color: #FF6C00 !important;
+}
+
+.tabs-bg a[aria-selected=true]{
+    border-top: 1px;
+    border-style: solid;   
+    color: #ffe600 !important;
+}
+.tabs-bg .tab-button[aria-selected=true] .tab-button-icon {
+    color: #ffe600 !important;
 }
 
 ion-navbar{ 
@@ -35,6 +45,6 @@ ion-header{
     font-family: 'RSU_Regular';
     src: url('../assets/fonts/RSU_Regular.ttf') 
 }
-*{
+.fontRSU{
     font-family: RSU_Regular;
 }

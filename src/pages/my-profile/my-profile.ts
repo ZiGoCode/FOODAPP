@@ -39,5 +39,8 @@ export class MyProfilePage {
     this.appCtrl.getRootNav().setRoot('LoginPage');
   
   }
+  open(){
+    this.appCtrl.getRootNav().push('TabsRtrPage',{},{animate: true, direction: 'back'});
+  }
 
 }

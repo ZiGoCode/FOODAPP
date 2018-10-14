@@ -48,18 +48,10 @@ export class EditRestaurantPage {
 
   ngOnInit() {
     this.onYourRestaurantForm = this._fb.group({
-      profiledata: [true, Validators.compose([
-        Validators.required
-      ])],
-      restaurantTitle: ['', Validators.compose([
-        Validators.required
-      ])],
-      restaurantAddress: ['', Validators.compose([
-        Validators.required
-      ])],
-      restaurantType: ['', Validators.compose([
-        Validators.required
-      ])],
+      profiledata: [true, Validators.compose([Validators.required])],
+      restaurantTitle: ['', Validators.compose([Validators.required])],
+      restaurantAddress: ['', Validators.compose([Validators.required])],
+      restaurantType: ['', Validators.compose([Validators.required])],
       restaurantRoad: ['', Validators.compose([Validators.required])],
       restaurantSub: ['', Validators.compose([Validators.required])],
       restaurantDistrict: ['', Validators.compose([Validators.required])],
