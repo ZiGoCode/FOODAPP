@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="danger2">
+  <ion-navbar color="gold">
     <ion-title>Register Restaurant</ion-title>
   </ion-navbar>
 
@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-card color="danger5" no-padding no-margin class="card-bg12">
     <ion-card-content>
-      <span class="card-bg13">กรอกแบบฟอร์ม พร้อมกับข้อมูลร้านอาหารของคุณ เพื่อลงทะเบียน</span>
+      <span class="card-bg13 fontRSU">กรอกแบบฟอร์ม พร้อมกับข้อมูลร้านอาหารของคุณ เพื่อลงทะเบียน</span>
     </ion-card-content>
   </ion-card>
   <br>
@@ -120,53 +120,6 @@
       + Restaurant
     </button>
     <br>
-    <!-- <button ion-item detail-none no-margin  navPush="EditrestaurantPage">
-          <ion-thumbnail item-start>
-            <img src="../../assets/imgs/F.png">
-          </ion-thumbnail>
-          <div text-capitalize>
-            <h2 ion-text color="dark" class="fw500">{{ (restaurantUid | async)?.title }}</h2>
-            <p class="text-12x" ion-text color="star">{{ (restaurantUid | async)?.type }}</p>
-            <p ion-text class="text-12"><span>1 km : 30-60min</span></p>
-          </div>
-
-          <button ion-button clear icon-left text-start item-right color="dark">
-            <span class="button-inner">
-              <ion-icon name="md-clipboard"></ion-icon>
-              Dish
-            </span>
-          </button>
-        </button> -->
   </form>
-  <ion-item color="light" no-lines>Edit Restaurant</ion-item>
-
-  <ion-list>
-
-    <ion-item-sliding *ngFor="let item of items | async">
-      <ion-item (click)="editR(item)">
-        <ion-thumbnail item-start>
-          <img src="../../assets/imgs/icon.png">
-        </ion-thumbnail>
-        <h3 ion-text color="danger4" class="fw700">{{ item.title }}</h3>
-        <p ion-text color="danger3" class="fw500">{{ item.type }}</p>
-        <p ion-text class="text-12x">{{ item.address }}</p>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button (click)="btedit(item)" class="bts-w" color="secondary1">
-          <ion-icon name="ios-checkbox"></ion-icon>
-          UP
-        </button>
-        <button ion-button (click)="btedit(item)" class="bts-w">
-          <ion-icon name="create"></ion-icon>
-          Edit
-        </button>
-        <button ion-button color="danger1" (click)="deleteR(item)" class="bts-w">
-          <ion-icon name="md-trash"></ion-icon>
-          Delete
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-
 
 </ion-content>

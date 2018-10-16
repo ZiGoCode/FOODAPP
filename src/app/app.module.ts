@@ -30,7 +30,7 @@ import { FIREBASE_CONFIG } from '../firebase/firebase-config';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    
+
   ],
   providers: [
     StatusBar,

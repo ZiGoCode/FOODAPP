@@ -43,24 +43,34 @@
       </ion-col>
     </ion-row>
   </div>
-  <br>
 
-  <ion-row no-maegin no-padding *ngFor="let item of items | async">
-    <ion-col col-3>
-      <img class="img-bg" src="../../assets/imgs/icon.png">
-    </ion-col>
-    <ion-col col-6 class="danger4">
-      <h3 ion-text color="danger4" class="text-ag1">{{ item.title }}</h3>
-      <p ion-text color="danger3" class="text-ag2">{{ item.type }}</p>
-      <p ion-text class="text-ag3">{{ item.address }} ∙ 30 - 60min</p>
-    </ion-col>
-    <ion-col col-2>
-      <button ion-button icon-start clear color="danger3" small>
-        <span class="danger3">
-          <ion-icon name="star"></ion-icon>
-        </span>
-        3.8
-      </button>
-    </ion-col>
-  </ion-row>
+  <ion-item-divider no-marging no-lines>
+    <span ion-text color="danger2" class="fontRSU">ร้านอาหาร</span>
+  </ion-item-divider>
+
+  <div *ngFor="let item of items | async" no-maegin no-padding>
+    <ion-row text-center text-wrap no-maegin no-padding class="polaroid1" navPush="RegisterRtrPage">
+      <ion-col col-3>
+        <img class="img-bg" src="../../assets/imgs/icon.png">
+      </ion-col>
+      <ion-col col-7 class="danger4">
+        <h1 ion-text color="danger4" class="text-ag1">{{ item.title }}</h1>
+        <p ion-text color="danger3" class="text-ag2">{{ item.type }}</p>
+        <p ion-text color="dark3" class="text-ag3">{{ item.district }},{{ item.province }}</p>
+      </ion-col>
+      <ion-col col-2 no-maegin no-padding>
+        <button ion-button icon-start clear color="danger3" class="col2-m" small>
+          <span class="danger3">
+            <ion-icon name="star"></ion-icon>
+          </span>
+          <p ion-text color="danger3" class="text-ag4">3.8</p>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center text-wrap no-maegin no-padding>
+      <ion-col col-12 no-maegin no-padding>
+        <div class="item-size2"></div>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

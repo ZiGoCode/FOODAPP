@@ -11,14 +11,15 @@ export class TabsRtrPage {
   tab1 = 'NewPage';
   tab2 = 'OpenPage';
   tab3 = 'OrdersPage';
-  tab4 = 'StarsPage';
+  tab4 = 'MessagesRtrPage';
+  tab5 = 'StarsPage';
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public appCtrl: App) {
     
   }
   ionViewWillEnter() {
-    this.tabRef.select(0);
+    this.tabRef.select(1);
   }
 
   ionViewDidLoad() {
