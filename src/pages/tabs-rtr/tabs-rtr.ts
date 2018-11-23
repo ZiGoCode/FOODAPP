@@ -19,7 +19,7 @@ export class TabsRtrPage {
     
   }
   ionViewWillEnter() {
-    this.tabRef.select(1);
+    this.tabRef.select(2);
   }
 
   ionViewDidLoad() {

@@ -1,13 +1,33 @@
-
 <ion-header>
 
   <ion-navbar color="gold">
-    <ion-title>New</ion-title>
+    <ion-title>
+      <ion-icon name="ios-create"></ion-icon>
+      Restaurant
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <div *ngFor="let item of items | async" no-maegin no-padding (click)="editR(item)">
+    <ion-row text-center text-wrap no-maegin no-padding class="polaroid1">
+      <ion-col col-3>
+        <img class="img-bg" src="../../assets/imgs/icon.png">
+      </ion-col>
+      <ion-col col-9 class="danger4">
+        <h1 ion-text color="danger4" class="text-ag1">{{ item.title }}</h1>
+        <p ion-text color="danger3" class="text-ag2">{{ item.type }}</p>
+        <p ion-text color="dark3" ion-text class="text-ag3">{{ item.sub }},{{ item.district }},{{ item.province }}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center text-wrap no-maegin no-padding>
+      <ion-col col-12 no-maegin no-padding>
+        <div class="item-size2"></div>
+      </ion-col>
+    </ion-row>
+  </div>
 
 </ion-content>

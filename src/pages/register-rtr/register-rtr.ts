@@ -80,7 +80,7 @@ export class RegisterRtrPage {
     loader.present();
     // this.angularFireDatabase.list("/restaurant/").push(restaurant);
     this.angularFireAuth.authState.take(1).subscribe(data => {
-      this.angularFireDatabase.list("/restaurant/").push(restaurant);
+      // this.angularFireDatabase.list("/restaurant/").push(restaurant);
       this.angularFireDatabase.list(`restaurantID/${data.uid}`).push(restaurant).then(() => {
         this.navCtrl.pop();
       });

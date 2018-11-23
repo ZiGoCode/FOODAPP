@@ -108,11 +108,14 @@
       </button>
     </div>
 
-    <button ion-button block color="danger1" (click)="editRestaurant(restaurant)" [disabled]="!onYourRestaurantForm.valid">
-      <ion-icon name="ios-create"></ion-icon>
-      &nbsp;
-      Edit Restaurant
-    </button>
+    <div text-center>
+      <button center ion-button full round color="primary" (click)="editRestaurant(restaurant)" [disabled]="!onYourRestaurantForm.valid">
+        <ion-icon name="md-copy"></ion-icon>
+        &nbsp;
+        UP and Edit
+      </button>
+    </div>
+
     <br>
   </form>
 

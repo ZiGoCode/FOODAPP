@@ -4,7 +4,7 @@
   </div>
   <ion-card class="card-background-page">
     <ion-card-header>
-      <ion-segment color="danger1" [(ngModel)]="pet">
+      <ion-segment color="danger2" [(ngModel)]="pet">
         <ion-segment-button value="login">
           Login
         </ion-segment-button>
@@ -45,21 +45,21 @@
               </a></p>
           </ion-item>
           <br>
-          <button ion-button icon-start full color="danger1" (click)=login(user) class="card-subtitle">
+          <button ion-button icon-start full color="danger2" round (click)=login(user) class="card-subtitle">
             <ion-icon name="ios-log-in"></ion-icon>
-            SING IN
+            LOG IN
           </button>
           <span ion-text color="light2">Or Sign Up with:</span>
           <ion-row no-padding>
             <ion-col no-padding>
-              <button ion-button icon-start full color="facebook">
+              <button ion-button icon-start full round color="facebook" class="md">
                 <ion-icon name="logo-facebook"></ion-icon>
                 facebook
               </button>
             </ion-col>
             &nbsp;
             <ion-col no-padding>
-              <button ion-button icon-start full color="google">
+              <button ion-button icon-start full round color="google">
                 <ion-icon name="logo-googleplus"></ion-icon>
                 google
               </button>
@@ -120,7 +120,7 @@
           </ion-item>
 
           <br>
-          <button ion-button icon-start full color="danger1" (click)="register(user)" [disabled]="!onRegisterForm.valid">
+          <button ion-button icon-start full color="danger2" round (click)="register(user)" [disabled]="!onRegisterForm.valid">
             <ion-icon name="person-add"></ion-icon>
             SING UP
           </button>
