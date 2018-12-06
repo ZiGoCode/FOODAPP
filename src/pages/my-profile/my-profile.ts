@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
@@ -22,7 +22,10 @@ export class MyProfilePage {
 
   constructor(private angularFireAuth: AngularFireAuth,
     private angularFireDatabase: AngularFireDatabase,
-    public navCtrl: NavController, public navParams: NavParams,public appCtrl: App) {
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public appCtrl: App,
+    public alertCtrl: AlertController) {
 
     this.angularFireAuth.authState.subscribe(data =>{
       this.profileData = this.angularFireDatabase.object(`user/${data.uid}`).valueChanges();
@@ -35,10 +38,29 @@ export class MyProfilePage {
   }
 
   logout(){
-    
-    this.appCtrl.getRootNav().setRoot('LoginPage');
-  
+    let alert = this.alertCtrl.create({
+      title: 'ลงชื่อออก',
+      message: 'คุณต้องการยืนลงชื่อออกจากระบบหรือไม่',
+      buttons: [
+          {
+              text: 'ยกเลิก',
+              role: 'cancel',
+              handler: () => {
+              }
+          },
+          {
+              text: 'ตกลง',
+              handler: () => {
+                  // localStorage.removeItem('userData')
+                  localStorage.removeItem('userData')
+                  this.appCtrl.getRootNav().setRoot('LoginPage');
+              }
+          }
+      ]
+  })
+  alert.present()
   }
+
   open(){
     this.appCtrl.getRootNav().push('TabsRtrPage',{},{animate: true, direction: 'back'});
   }

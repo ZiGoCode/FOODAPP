@@ -67,6 +67,7 @@ export class LoginPage {
     try {
       const resulr = await this.angularFireAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (resulr) {
+        localStorage.setItem('userData', JSON.stringify(resulr));
         this.navCtrl.setRoot('TabsPage');
         loader.dismiss();
       }
@@ -96,6 +97,7 @@ export class LoginPage {
         this.angularFireAuth.authState.take(1).subscribe(data =>{
           this.angularFireDatabase.object(`user/${data.uid}`).set(this.user);
         });
+        localStorage.setItem('userData', JSON.stringify(result));
         this.navCtrl.setRoot('TabsPage');
         loader.dismiss(); 
       }

@@ -1,6 +1,6 @@
 <ion-content no-padding no-marging text-center class="bg-style">
   <div no-padding no-marging>
-    <img src="../../assets/imgs/icon2.png" class="subtitle">
+    <img src="../../assets/imgs/Logo3.png" class="subtitle">
   </div>
   <ion-card class="card-background-page">
     <ion-card-header>
@@ -44,26 +44,31 @@
                 <font size="1">Forgot Password?</font>
               </a></p>
           </ion-item>
-          <br>
+          
           <button ion-button icon-start full color="danger2" round (click)=login(user) class="card-subtitle">
             <ion-icon name="ios-log-in"></ion-icon>
             LOG IN
           </button>
-          <span ion-text color="light2">Or Sign Up with:</span>
+          <p><font size="1">Or Sign Up with</font></p> 
           <ion-row no-padding>
+            &nbsp;
+            &nbsp;
             <ion-col no-padding>
-              <button ion-button icon-start full round color="facebook" class="md">
+              <button ion-button icon-start full color="facebook" class="md">
                 <ion-icon name="logo-facebook"></ion-icon>
                 facebook
               </button>
             </ion-col>
             &nbsp;
+            &nbsp;
             <ion-col no-padding>
-              <button ion-button icon-start full round color="google">
+              <button ion-button icon-start full color="google">
                 <ion-icon name="logo-googleplus"></ion-icon>
                 google
               </button>
             </ion-col>
+            &nbsp;
+            &nbsp;
           </ion-row>
 
         </ion-list>
@@ -115,11 +120,10 @@
 
           <ion-item>
             <p align='right'>
-              <font size="1">FOODAPP.com</font>
+              <font size="1">www.foodapp.com</font>
             </p>
           </ion-item>
 
-          <br>
           <button ion-button icon-start full color="danger2" round (click)="register(user)" [disabled]="!onRegisterForm.valid">
             <ion-icon name="person-add"></ion-icon>
             SING UP
@@ -128,8 +132,5 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <br>
-  <br>
-  <br>
   <br>
 </ion-content>

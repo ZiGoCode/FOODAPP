@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-navbar color="danger2">
+  <ion-navbar color="danger2" class="searchbar">
     <ion-buttons left>
       <button ion-button icon-only color="">
         <ion-icon name="ionic"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-searchbar (ionInput)="getItems($event)" class="search-bar"></ion-searchbar>
+    <ion-searchbar (ionInput)="getItems($event)" class="searchbar"></ion-searchbar>
     <ion-buttons end>
       <button ion-button icon-only color="">
         <ion-icon name="ios-options"></ion-icon>
@@ -14,7 +14,28 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content>
+  <div>
+    <ion-slides pager="true" paginationType="bullets" autoplay="3000" loop class="slider-pager">
+      <ion-slide>
+        <img src="../../assets/imgs/restaurants/restaurant05.jpg" alt="">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/restaurants/restaurant07.jpg" alt="">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/restaurants/restaurant06.jpg" alt="">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/restaurants/restaurant10.jpg" alt="">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/restaurants/restaurant08.jpg" alt="">
+      </ion-slide>
+    </ion-slides>
+  </div>
+
   <ion-item-divider no-marging no-lines>
     <span ion-text color="danger2" class="fontRSU">ร้านอาหารยอดนิยม</span>
   </ion-item-divider>
@@ -178,7 +199,7 @@
       <ion-col col-7 class="danger4">
         <h1 ion-text color="danger4" class="text-ag1">{{ item.title }}</h1>
         <p ion-text color="danger3" class="text-ag2">{{ item.type }}</p>
-        <p  ion-text color="dark3" ion-text class="text-ag3">{{ item.district }},{{ item.province }} ∙ 30 - 60min</p>
+        <p ion-text color="dark3" ion-text class="text-ag3">{{ item.district }},{{ item.province }} ∙ 30 - 60min</p>
       </ion-col>
       <ion-col col-2 no-maegin no-padding>
         <button ion-button icon-start clear color="danger3" class="col2-m" small>

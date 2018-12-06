@@ -59,6 +59,12 @@ $colors: (
 
 // App iOS Variables
 // --------------------------------------------------
+$searchbar-ios-input-text-color: #fff;
+$searchbar-ios-input-search-icon-color: #fff;
+
+// $toolbar-background: #d9b800;  
+
+
 // iOS only Sass variables can go here
 
 
@@ -99,5 +105,5 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+@import "roboto"; 
+@import "noto-sans"; 
