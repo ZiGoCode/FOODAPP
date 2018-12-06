@@ -4,7 +4,6 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { Restaurant } from '../../firebase/restaurant';
 
 

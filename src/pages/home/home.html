@@ -2,7 +2,7 @@
   <ion-navbar color="danger2" class="searchbar">
     <ion-buttons left>
       <button ion-button icon-only color="">
-        <ion-icon name="ionic"></ion-icon>
+        <ion-icon name="custom-food"></ion-icon>
       </button>
     </ion-buttons>
     <ion-searchbar (ionInput)="getItems($event)" class="searchbar"></ion-searchbar>
@@ -17,7 +17,7 @@
 
 <ion-content>
   <div>
-    <ion-slides pager="true" paginationType="bullets" autoplay="3000" loop class="slider-pager">
+    <ion-slides pager="true" autoplay="3000" loop class="slider-pager">
       <ion-slide>
         <img src="../../assets/imgs/restaurants/restaurant05.jpg" alt="">
       </ion-slide>
@@ -35,6 +35,102 @@
       </ion-slide>
     </ion-slides>
   </div>
+
+  <ion-item-divider no-margin class="item-zex" no-lines>
+    <ion-icon color="red" name="custom-mobile"></ion-icon>
+    <span ion-text color="danger2" class="text-left1 fontRSU">ร้านเปิดใหม่</span>
+  </ion-item-divider>
+
+  <!-- <ion-item-divider icon-start no-marging no-lines>
+    <ion-icon color="red" name="custom-mobile"></ion-icon>
+    <span ion-text color="danger2" class="fontRSU">ร้านอาหารยอดนิยม</span>
+  </ion-item-divider> -->
+
+  <div class="div-padding">
+    <ion-scroll scrollX="true" class="scrool-bg">
+      <div class="inner">
+        <ion-card no-padding>
+          <img src="../../assets/imgs/restaurants/restaurant07sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card no-padding>
+          <img src="../../assets/imgs/restaurants/restaurant08sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card>
+          <img src="../../assets/imgs/restaurants/restaurant03sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card>
+          <img src="../../assets/imgs/restaurants/restaurant05sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card>
+          <img src="../../assets/imgs/restaurants/restaurant06sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card no-padding>
+          <img src="../../assets/imgs/restaurants/restaurant04sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card>
+          <img src="../../assets/imgs/restaurants/restaurant10sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card>
+          <img src="../../assets/imgs/restaurants/restaurant09sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card>
+          <img src="../../assets/imgs/restaurants/restaurant12sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="inner">
+        <ion-card>
+          <img src="../../assets/imgs/restaurants/restaurant11sq.jpg">
+          <ion-card-content>
+            content
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-scroll>
+  </div>
+
 
   <ion-item-divider no-marging no-lines>
     <span ion-text color="danger2" class="fontRSU">ร้านอาหารยอดนิยม</span>
