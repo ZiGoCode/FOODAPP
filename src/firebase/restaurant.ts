@@ -8,4 +8,7 @@ export interface Restaurant {
     province: string;
     postalcode: string;
     type: string;
+    // dish: {
+        
+    // };
 }

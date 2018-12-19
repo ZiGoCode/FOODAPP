@@ -1,13 +1,33 @@
-
 <ion-header>
-
-  <ion-navbar color="danger2">
+  <ion-navbar hideBackButton color="danger2">
+    <ion-buttons start>
+      <button ion-button icon-only icon-start color="" navPop>
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>dish</ion-title>
+    <ion-buttons end>
+      <button ion-button><ion-icon name="custom-cart"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <div>
+    <ion-slides pager="true" autoplay="3000" loop class="slider-pager">
+      <ion-slide *ngFor="let item of images">
+        <img src="{{ item.image }}" alt="" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div text-center class="div-pad">
+    <span class="thick" ion-text color="danger4">Bukhara Restaurant</span>
+    <p ion-text color="danger3" class="text-ag2 p-pad">Originall</p>
+    <p ion-text color="dark3" ion-text class="text-ag3 fontRSU">
+      มหาสารคาม ∙ 30 - 60min
+    </p>
+  </div>
+  <ion-item no-line text-center color="danger2">
+    <span class="text-left1 fontRSU"> MANU </span>
+  </ion-item>
 </ion-content>

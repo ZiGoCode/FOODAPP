@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, App } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
@@ -20,7 +20,8 @@ export class OpenPage {
   items: Observable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private angularFireAuth: AngularFireAuth,
-    private angularFireDatabase: AngularFireDatabase,public actionsheetCtrl: ActionSheetController) {
+    private angularFireDatabase: AngularFireDatabase,public actionsheetCtrl: ActionSheetController,
+    public appCtrl: App) {
     this.angularFireAuth.authState.take(1).subscribe(data => {
       // this.items = this.angularFireDatabase.list(`restaurantID/${data.uid}`).valueChanges();
       this.items = this.angularFireDatabase.list(`restaurantID/${data.uid}`).snapshotChanges().map(caches => {
@@ -82,6 +83,14 @@ export class OpenPage {
       this.angularFireDatabase.list(`restaurant/`).remove(item.key);
       this.angularFireDatabase.list(`restaurantID/${data.uid}`).remove(item.key);
     })
+  }
+
+  registerRtrPage(){
+    this.appCtrl.getRootNav().push('RegisterRtrPage',{},{animate: true, direction: 'forward'});
+  }
+
+  registerDishPage(){
+    this.appCtrl.getRootNav().push('RegisterDishPage',{},{animate: true, direction: 'forward'});
   }
 
 }

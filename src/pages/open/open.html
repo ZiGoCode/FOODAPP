@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="">
+  <ion-navbar color="secon">
     <ion-title>Open</ion-title>
   </ion-navbar>
 
@@ -8,7 +8,7 @@
 
 
 <ion-content padding>
-  <ion-row text-center text-wrap no-maegin no-padding class="polaroid1" navPush="RegisterRtrPage">
+  <ion-row text-center text-wrap no-maegin no-padding class="polaroid1" (click)="registerRtrPage()">
     <ion-col col-3>
       <img class="img-bg" src="../../assets/imgs/icon.png">
     </ion-col>
@@ -28,7 +28,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-row text-center text-wrap no-maegin no-padding class="polaroid1" navPush="RegisterDishPage">
+  <ion-row text-center text-wrap no-maegin no-padding class="polaroid1" (click)="registerDishPage()">
     <ion-col col-3>
       <img class="img-bg" src="../../assets/imgs/icon.png">
     </ion-col>

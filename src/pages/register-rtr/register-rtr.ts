@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ActionSheetController, App } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -31,7 +31,8 @@ export class RegisterRtrPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private _fb: FormBuilder,
-    public actionsheetCtrl: ActionSheetController) {
+    public actionsheetCtrl: ActionSheetController,
+    public appCtrl: App) {
 
 
 
@@ -139,4 +140,9 @@ export class RegisterRtrPage {
       // this.angularFireDatabase.list(`restaurant/`).remove(item.key);
     })
   }
+
+  onPop(){
+    this.appCtrl.getRootNav().pop({ animate: true, direction: '' });
+  }
+
 }

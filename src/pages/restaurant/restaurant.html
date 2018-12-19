@@ -1,16 +1,15 @@
 <ion-header>
   <ion-navbar color="danger2">
-    <ion-searchbar (ionInput)="getItems($event)" class="search-bar"></ion-searchbar>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-buttons end>
-      <button ion-button icon-only color="">
-        <ion-icon name="cart"></ion-icon>
+      <button ion-button>
+        <ion-icon name="custom-cart"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-
   <ion-item-divider no-marging no-lines>
     <span ion-text color="danger2" class="fontRSU">ร้านอาหารแนะนำ</span>
   </ion-item-divider>
@@ -18,25 +17,37 @@
   <div no-maegin>
     <ion-row text-center text-wrap no-maegin no-padding class="polaroid">
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant11sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant11sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">Ipsum Restaurant</span>
         </div>
       </ion-col>
       <ion-col text-center col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant05sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant05sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">Blue Print Restaurant & Bar</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant06sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant06sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">George's Hamburguer</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant07sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant07sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">La Vitta</span>
         </div>
@@ -48,21 +59,35 @@
     <span ion-text color="danger2" class="fontRSU">ร้านอาหาร</span>
   </ion-item-divider>
 
-  <div *ngFor="let item of items | async" no-maegin no-padding>
-    <ion-row text-center text-wrap no-maegin no-padding class="polaroid1" navPush="RegisterRtrPage">
+  <div *ngFor="let item of (items | async)" no-maegin no-padding>
+    <ion-row
+      text-center
+      text-wrap
+      no-maegin
+      no-padding
+      class="polaroid1"
+      (click)="dishPage()"
+    >
       <ion-col col-3>
-        <img class="img-bg" src="../../assets/imgs/icon.png">
+        <img class="img-bg" src="../../assets/imgs/icon.png" />
       </ion-col>
       <ion-col col-7 class="danger4">
         <h1 ion-text color="danger4" class="text-ag1">{{ item.title }}</h1>
         <p ion-text color="danger3" class="text-ag2">{{ item.type }}</p>
-        <p ion-text color="dark3" class="text-ag3">{{ item.district }},{{ item.province }}</p>
+        <p ion-text color="dark3" class="text-ag3">
+          {{ item.district }},{{ item.province }}
+        </p>
       </ion-col>
       <ion-col col-2 no-maegin no-padding>
-        <button ion-button icon-start clear color="danger3" class="col2-m" small>
-          <span class="danger3">
-            <ion-icon name="star"></ion-icon>
-          </span>
+        <button
+          ion-button
+          icon-start
+          clear
+          color="danger3"
+          class="col2-m"
+          small
+        >
+          <span class="danger3"> <ion-icon name="star"></ion-icon> </span>
           <p ion-text color="danger3" class="text-ag4">3.8</p>
         </button>
       </ion-col>

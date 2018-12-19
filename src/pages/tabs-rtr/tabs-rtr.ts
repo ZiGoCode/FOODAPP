@@ -13,20 +13,22 @@ export class TabsRtrPage {
   tab3 = 'OrdersPage';
   tab4 = 'MessagesRtrPage';
   tab5 = 'StarsPage';
-  
+  idteb: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public appCtrl: App) {
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App) {
+
+    this.idteb = this.navParams.get('idteb');
+
   }
   ionViewWillEnter() {
-    this.tabRef.select(2);
+    this.tabRef.select(this.idteb);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsRtrPage');
   }
-  rootpage(){
-    this.appCtrl.getRootNav().pop({animate: true, direction: 'forward'});
+  rootpage() {
+    this.appCtrl.getRootNav().pop({ animate: true, direction: 'forward' });
   }
- 
+
 }

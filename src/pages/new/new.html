@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="">
+  <ion-navbar color="secon">
     <ion-title>
       <ion-icon name="ios-create"></ion-icon>
       Restaurant
@@ -12,7 +12,7 @@
 
 <ion-content padding>
 
-  <div *ngFor="let item of items | async" no-maegin no-padding (click)="editR(item)">
+  <div *ngFor="let item of items | async" no-maegin no-padding (click)="editRest(item)">
     <ion-row text-center text-wrap no-maegin no-padding class="polaroid1">
       <ion-col col-3>
         <img class="img-bg" src="../../assets/imgs/icon.png">

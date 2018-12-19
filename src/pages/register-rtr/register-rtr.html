@@ -1,6 +1,11 @@
 <ion-header>
 
-  <ion-navbar color="gold">
+  <ion-navbar hideBackButton color="secon">
+    <ion-buttons start>
+      <button ion-button icon-only icon-start color="advice" (click)="onPop()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Register Restaurant</ion-title>
   </ion-navbar>
 
@@ -95,7 +100,7 @@
     </ion-list>
 
     <div padding-vertical>
-      <h5 ion-text color="danger1" margin-bottom class="fw500">Add Images of Restaurant <span ion-text class="fw300">
+      <h5 ion-text color="secon" margin-bottom class="fw500">Add Images of Restaurant <span ion-text class="fw300">
           (Max.5)</span></h5>
       <button ion-button icon-only color="light">
         <ion-icon name="image" color="dark"></ion-icon>
@@ -114,7 +119,7 @@
       </button>
     </div>
 
-    <button ion-button block color="danger1" (click)="addRestaurant(restaurant)" [disabled]="!onYourRestaurantForm.valid">
+    <button ion-button block color="secon" (click)="addRestaurant(restaurant)" [disabled]="!onYourRestaurantForm.valid">
       <ion-icon name="cloud-upload"></ion-icon>
       &nbsp;
       + Restaurant

@@ -11,10 +11,10 @@
 .tabs-bg a[aria-selected=true]{
     border-top: 1px;
     border-style: solid;   
-    color: #222 !important;
+    color: #00635a !important;
 }
 .tabs-bg .tab-button[aria-selected=true] .tab-button-icon {
-    color: #222 !important;
+    color: #00635a !important;
 }
 
 ion-navbar{ 
@@ -64,6 +64,14 @@ ion-icon {
     }
     &[class*="custom-food"] {
         mask-image: url(../assets/imgs/foodicon.png);
-      }
-    
+    }
+    &[class*="custom-cart"] {
+        mask-image: url(../assets/icon/online-shopping-cart.svg);
+    }
+    &[class*="custom-settings"] {
+        mask-image: url(../assets/icon/settings.svg);
+    }
+    &[class*="custom-shop"] {
+        mask-image: url(../assets/icon/icon.svg);
+    }
 }

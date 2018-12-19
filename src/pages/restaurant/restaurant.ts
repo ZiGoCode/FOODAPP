@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 
@@ -20,14 +20,18 @@ export class RestaurantPage {
   items: Observable<any[]>;
 
   constructor(private angularFireDatabase: AngularFireDatabase,
-    public navCtrl: NavController, public navParams: NavParams) {
+    public navCtrl: NavController, public navParams: NavParams,private appCtrl: App) {
 
     this.items = this.angularFireDatabase.list(`restaurant`).valueChanges();
-    
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantPage');
+  }
+
+  dishPage(){
+    this.appCtrl.getRootNav().push('DishPage', { }, { animate: true, direction: 'forward' });
   }
 
 }

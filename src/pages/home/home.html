@@ -1,44 +1,31 @@
 <ion-header>
-  <ion-navbar color="danger2" class="searchbar">
-    <ion-buttons left>
+  <ion-navbar color="danger2">
+    <!-- <ion-buttons left>
       <button ion-button icon-only color="">
         <ion-icon name="custom-food"></ion-icon>
       </button>
-    </ion-buttons>
-    <ion-searchbar (ionInput)="getItems($event)" class="searchbar"></ion-searchbar>
+    </ion-buttons> -->
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
     <ion-buttons end>
-      <button ion-button icon-only color="">
-        <ion-icon name="ios-options"></ion-icon>
-      </button>
+      <button ion-button><ion-icon name="custom-settings"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content>
   <div>
     <ion-slides pager="true" autoplay="3000" loop class="slider-pager">
-      <ion-slide>
-        <img src="../../assets/imgs/restaurants/restaurant05.jpg" alt="">
-      </ion-slide>
-      <ion-slide>
-        <img src="../../assets/imgs/restaurants/restaurant07.jpg" alt="">
-      </ion-slide>
-      <ion-slide>
-        <img src="../../assets/imgs/restaurants/restaurant06.jpg" alt="">
-      </ion-slide>
-      <ion-slide>
-        <img src="../../assets/imgs/restaurants/restaurant10.jpg" alt="">
-      </ion-slide>
-      <ion-slide>
-        <img src="../../assets/imgs/restaurants/restaurant08.jpg" alt="">
+      <ion-slide *ngFor="let item of images">
+        <img src="{{ item.image }}" alt="" />
       </ion-slide>
     </ion-slides>
   </div>
 
   <ion-item-divider no-margin class="item-zex" no-lines>
     <ion-icon color="red" name="custom-mobile"></ion-icon>
-    <span ion-text color="danger2" class="text-left1 fontRSU">ร้านเปิดใหม่</span>
+    <span ion-text color="danger2" class="text-left1 fontRSU"
+      >ร้านเปิดใหม่</span
+    >
   </ion-item-divider>
 
   <!-- <ion-item-divider icon-start no-marging no-lines>
@@ -48,89 +35,18 @@
 
   <div class="div-padding">
     <ion-scroll scrollX="true" class="scrool-bg">
-      <div class="inner">
+      <div *ngFor="let item of imagesi" class="inner">
         <ion-card no-padding>
-          <img src="../../assets/imgs/restaurants/restaurant07sq.jpg">
+          <img src="{{ item.image }}" />
           <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card no-padding>
-          <img src="../../assets/imgs/restaurants/restaurant08sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card>
-          <img src="../../assets/imgs/restaurants/restaurant03sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card>
-          <img src="../../assets/imgs/restaurants/restaurant05sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card>
-          <img src="../../assets/imgs/restaurants/restaurant06sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card no-padding>
-          <img src="../../assets/imgs/restaurants/restaurant04sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card>
-          <img src="../../assets/imgs/restaurants/restaurant10sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card>
-          <img src="../../assets/imgs/restaurants/restaurant09sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card>
-          <img src="../../assets/imgs/restaurants/restaurant12sq.jpg">
-          <ion-card-content>
-            content
-          </ion-card-content>
-        </ion-card>
-      </div>
-      <div class="inner">
-        <ion-card>
-          <img src="../../assets/imgs/restaurants/restaurant11sq.jpg">
-          <ion-card-content>
-            content
+            <div class="card-content" no-padding>
+              <span ion-text color="danger4">Barracuda's Seafood</span>
+            </div>
           </ion-card-content>
         </ion-card>
       </div>
     </ion-scroll>
   </div>
-
 
   <ion-item-divider no-marging no-lines>
     <span ion-text color="danger2" class="fontRSU">ร้านอาหารยอดนิยม</span>
@@ -138,25 +54,37 @@
   <div no-maegin>
     <ion-row text-center text-wrap no-maegin no-padding class="polaroid">
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant08sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant08sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">Barracuda's Seafood</span>
         </div>
       </ion-col>
       <ion-col text-center col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant10sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant10sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">Bukhara Restaurant</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant09sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant09sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">Melvyn's</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant11sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant11sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">CraftWoks Restaurant & Bar</span>
         </div>
@@ -171,25 +99,37 @@
   <div no-maegin>
     <ion-row text-center text-wrap no-maegin no-padding class="polaroid">
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant03sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant03sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">Ipsum Restaurant</span>
         </div>
       </ion-col>
       <ion-col text-center col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant05sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant05sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">Blue Print Restaurant & Bar</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant06sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant06sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">George's Hamburguer</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs//restaurants/restaurant07sq.jpg">
+        <img
+          class="img"
+          src="../../assets/imgs//restaurants/restaurant07sq.jpg"
+        />
         <div text-center class="container">
           <span ion-text color="danger4">La Vitta</span>
         </div>
@@ -202,16 +142,16 @@
 
   <ion-row text-center text-wrap no-maegin no-padding class="danger4">
     <ion-col col-6>
-      <img class="img-bg" src="../../assets/imgs/icon1.png">
+      <img class="img-bg" src="../../assets/imgs/icon1.png" />
     </ion-col>
     <ion-col col-6>
-      <img class="img-bg" src="../../assets/imgs/icon1.png">
+      <img class="img-bg" src="../../assets/imgs/icon1.png" />
     </ion-col>
     <ion-col col-6>
-      <img class="img-bg" src="../../assets/imgs/icon1.png">
+      <img class="img-bg" src="../../assets/imgs/icon1.png" />
     </ion-col>
     <ion-col col-6>
-      <img class="img-bg" src="../../assets/imgs/icon1.png">
+      <img class="img-bg" src="../../assets/imgs/icon1.png" />
     </ion-col>
   </ion-row>
 
@@ -222,61 +162,61 @@
   <div no-maegin>
     <ion-row text-center text-wrap no-maegin no-padding class="polaroid">
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish01.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish01.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">Ipsum Restaurant</span>
         </div>
       </ion-col>
       <ion-col text-center col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish02.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish02.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">Blue Print Restaurant & Bar</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish03.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish03.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">George's Hamburguer</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish04.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish04.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">La Vitta</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish05.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish05.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">Ipsum Restaurant</span>
         </div>
       </ion-col>
       <ion-col text-center col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish06.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish06.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">Blue Print Restaurant & Bar</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish07.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish07.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">George's Hamburguer</span>
         </div>
       </ion-col>
       <ion-col col-3>
-        <img class="img" src="../../assets/imgs/dishes/dish08.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish08.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">La Vitta</span>
         </div>
       </ion-col>
       <ion-col col-6>
-        <img class="img" src="../../assets/imgs/dishes/dish04.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish04.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">La Vitta</span>
         </div>
       </ion-col>
       <ion-col col-6>
-        <img class="img" src="../../assets/imgs/dishes/dish06.jpg">
+        <img class="img" src="../../assets/imgs/dishes/dish06.jpg" />
         <div text-center class="container">
           <span ion-text color="danger4">La Vitta</span>
         </div>
@@ -287,21 +227,35 @@
     <span ion-text color="danger2" class="fontRSU">ร้านอาหาร</span>
   </ion-item-divider>
 
-  <div *ngFor="let item of items | async" no-maegin no-padding>
-    <ion-row text-center text-wrap no-maegin no-padding class="polaroid1" navPush="RegisterRtrPage">
+  <div *ngFor="let item of items" no-maegin no-padding>
+    <ion-row
+      text-center
+      text-wrap
+      no-maegin
+      no-padding
+      class="polaroid1"
+      (click)="dishPage()"
+    >
       <ion-col col-3>
-        <img class="img-bg" src="../../assets/imgs/icon.png">
+        <img class="img-bg" src="../../assets/imgs/icon.png" />
       </ion-col>
       <ion-col col-7 class="danger4">
         <h1 ion-text color="danger4" class="text-ag1">{{ item.title }}</h1>
         <p ion-text color="danger3" class="text-ag2">{{ item.type }}</p>
-        <p ion-text color="dark3" ion-text class="text-ag3">{{ item.district }},{{ item.province }} ∙ 30 - 60min</p>
+        <p ion-text color="dark3" ion-text class="text-ag3">
+          {{ item.district }},{{ item.province }} ∙ 30 - 60min
+        </p>
       </ion-col>
       <ion-col col-2 no-maegin no-padding>
-        <button ion-button icon-start clear color="danger3" class="col2-m" small>
-          <span class="danger3">
-            <ion-icon name="star"></ion-icon>
-          </span>
+        <button
+          ion-button
+          icon-start
+          clear
+          color="danger3"
+          class="col2-m"
+          small
+        >
+          <span class="danger3"> <ion-icon name="star"></ion-icon> </span>
           <p ion-text color="danger3" class="text-ag4">3.8</p>
         </button>
       </ion-col>
@@ -312,7 +266,19 @@
       </ion-col>
     </ion-row>
   </div>
-  <br>
-  <br>
-  <br>
+  <br />
+
+  <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."
+    ></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+
+  <!-- <ion-infinite-scroll>
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
 </ion-content>

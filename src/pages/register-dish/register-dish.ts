@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, App } from 'ionic-angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
@@ -24,7 +24,8 @@ export class RegisterDishPage {
     public loadingCtrl: LoadingController,
     public navCtrl: NavController,
     public navParams: NavParams,
-    private _fb: FormBuilder) {
+    private _fb: FormBuilder,
+    public appCtrl: App) {
 
     this.angularFireAuth.authState.take(1).subscribe(data => {
       // this.items = this.angularFireDatabase.list(`restaurantID/${data.uid}`).valueChanges();
@@ -65,13 +66,18 @@ export class RegisterDishPage {
     });
     loader.present();
     this.angularFireAuth.authState.take(1).subscribe(data => {
-      this.angularFireDatabase.list(`restaurantID/${data.uid}/${dish.id}`).push(dish).then(() => {
+      this.angularFireDatabase.list(`restaurantID/${data.uid}/${dish.id}/dish`).push(dish).then(() => {
         this.navCtrl.pop();
       });
     });
     loader.dismiss();
   }
 
+  onPop(){
+    this.appCtrl.getRootNav().pop({ animate: true, direction: '' });
+    // this.navCtrl.pop();
+
+  }
 
   ionViewDidLoad() {
 
